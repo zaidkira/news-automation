@@ -1,0 +1,13 @@
+{
+  "name": "news-automation",
+  "version": "1.0.0",
+  "description": "Automated news fetcher for construction topics",
+  "main": "scripts/main.js",
+  "scripts": {
+    "start": "node scripts/main.js"
+  },
+  "dependencies": {
+    "rss-parser": "^3.13.0",
+    "axios": "^1.6.0"
+  }
+}
