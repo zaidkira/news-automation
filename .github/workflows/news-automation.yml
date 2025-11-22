@@ -1,0 +1,38 @@
+name: Daily News Automation
+
+on:
+  schedule:
+    - cron: '0 8 * * *'  # Daily at 8:00 AM UTC
+  workflow_dispatch:     # Manual trigger
+
+jobs:
+  fetch-and-post-news:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm install
+      
+    - name: Run news automation
+      run: node scripts/main.js
+      env:
+        WEBSITE_API_URL: ${{ secrets.WEBSITE_API_URL }}
+        WEBSITE_API_TOKEN: ${{ secrets.WEBSITE_API_TOKEN }}
+        
+    - name: Commit and push updates
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add data/posted-articles.json
+        git diff --staged --quiet || (git commit -m "Update posted articles [skip ci]" && git push)
