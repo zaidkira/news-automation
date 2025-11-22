@@ -1,1 +1,22 @@
-
+{
+  "isolation": [
+    "https://news.google.com/rss/search?q=isolation+construction+France&hl=fr&gl=FR&ceid=FR:fr",
+    "https://www.lemonde.fr/rss/sequence/ISL/",
+    "https://www.lesechos.fr/rss/rss_construction.xml"
+  ],
+  "ravalement": [
+    "https://news.google.com/rss/search?q=ravalement+façade+France&hl=fr&gl=FR&ceid=FR:fr",
+    "https://www.batiweb.com/rss/actualites.rss",
+    "https://www.lemoniteur.fr/rss"
+  ],
+  "échafaudage": [
+    "https://news.google.com/rss/search?q=échafaudage+construction+France&hl=fr&gl=FR&ceid=FR:fr",
+    "https://www.constructioncayola.com/rss/actualites.rss",
+    "https://www.batipress.com/rss"
+  ],
+  "peinture": [
+    "https://news.google.com/rss/search?q=peinture+construction+bâtiment+France&hl=fr&gl=FR&ceid=FR:fr",
+    "https://www.baticopro.com/rss",
+    "https://www.peinturedirectory.com/rss"
+  ]
+}
